@@ -1,0 +1,359 @@
+body {
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  counter-reset: game;
+  overflow: hidden;
+}
+.phone {
+  position:relative;
+  border: 8px solid black;
+  border-radius: 40px;
+  height: 600px;
+  width: 300px;
+  background: #CCEFFF;
+  box-shadow: 0 19px 38px rgba(0,0,0, 0.3),
+              0 15px 12px rgba(0,0,0, 0.3);
+}
+.cabecera {
+  display: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  color: indianred;
+  text-align: center;
+}
+.layer-1 {
+  position: absolute;
+  z-index: 1;
+  height: 450px;
+  width: 80px;
+  bottom: 0;
+  right: 60px;
+
+  animation-name: layer;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  animation-iteration-count: infinite;
+}
+
+@keyframes layer {
+  0% {
+      bottom: 0;
+  }
+  25% {
+      bottom: -60px;
+  }
+  100% {
+      bottom: 0;
+  }
+}
+
+input[type=checkbox] {
+  appearance: none;
+  cursor: pointer;
+  height: 50px;
+  margin: 0;
+  position: absolute;
+  top: 0;
+  width: 80px;
+  z-index: 2;
+}
+input:checked {
+  counter-increment: game;
+}
+.total-count::after {
+  content: counter(game);
+}
+.layer-2 {
+  position: absolute;
+  z-index: 2;
+  height: 450px;
+  width: 80px;
+  bottom: 0;
+  left: 60px;
+
+  animation-name: layer;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+.layer-3 {
+  position: absolute;
+  z-index: 3;
+  height: 400px;
+  width: 240px;
+  margin: 0 auto;
+  border-radius: 20px;
+  background: #66a167;
+  
+  box-shadow: 0 15px 15px #000000a0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+}
+.layer-4 {
+  position: absolute;
+  z-index: 4;
+  height: 320px;
+  width: 80px;
+  bottom: 0;
+  left: 30px;
+
+  animation-name: layer;
+  animation-duration: 0.8s;
+  animation-timing-function: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  animation-iteration-count: infinite;
+}
+.layer-5 {
+  position: absolute;
+  z-index: 5;
+  height: 270px;
+  width: 210px;
+  border-radius: 20px;
+  background: #66a167;
+  box-shadow: 0 15px 15px #000000a0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.layer-6 {
+  position: absolute;
+  z-index: 6;
+  height: 220px;
+  width: 80px;
+  bottom: 0;
+  right: 30px;
+
+  animation-name: layer;
+  animation-duration: 1.2s;
+  animation-timing-function: cubic-bezier(0.6, 0.28, 0.735, 0.045);
+  animation-iteration-count: infinite;
+}
+.layer-7 {
+  position: absolute;
+  z-index: 7;
+  height: 170px;
+  width: 180px;
+  border-radius: 20px;
+  background: #66a167;
+  box-shadow: 0 15px 15px #000000a0;
+  right: 0;
+  bottom: 0;
+}
+.layer-8 {
+  position: absolute;
+  z-index: 8;
+  height: 100px;
+  width: 150px;
+  margin: 0 auto;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+.layer-9 {
+  position: absolute;
+  z-index: 9;
+  height: 90px;
+  width: 110px;
+  left: 0;
+  bottom: 0;
+}
+.layer-10  {
+  position: absolute;
+  z-index: 10;
+  height: 90px;
+  width: 110px;
+  right: 0;
+  bottom: 0;
+}
+/* estilos de los conejos*/
+.left-ear--outer{
+  position: absolute;
+  width: 20px;
+  height: 50px;
+  border-radius: 90%;
+  background: white;
+  left: 10px;
+}
+.left-ear--inner{
+  position: absolute;
+  width: 10px;
+  height: 50px;
+  border-radius: 90%;
+  background: pink;
+  left: 15px;
+  top: 8px;        
+}
+.right-ear--outer{
+  position: absolute;
+  width: 20px;
+  height: 50px;
+  border-radius: 90%;
+  background: white;
+  right: 10px;
+}
+.right-ear--inner{
+  position: absolute;
+  width: 10px;
+  height: 50px;
+  border-radius: 90%;
+  background: pink;
+  right: 15px;
+  top: 8px;        
+}
+.head {
+  position: absolute;
+  width: 100%;
+  height: 80px;
+  border-radius: 50%;
+  background: white;
+  margin: 0 auto;
+  right: 0;
+  left: 0;
+  top: 30px;
+}
+.head__eye {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: gray;
+  top: 15px;
+  animation-name: blink;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes blink {
+  0% {
+      height: 4px;
+  }
+  5% {
+      transform: translate(0px, 2px);
+      height: 1px;
+  }
+  10% {
+      transform: translate(0px, 0px);
+      height: 4px;
+  }
+}
+
+.head__eye--left {
+  left: 30px;
+}
+.head__eye--right {
+  right: 30px;
+}
+/* creando el patron */
+.patron {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  width: 100%;
+  height: 30px;
+}
+.patron__container{
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background-color: #9b573a;
+}
+.relleno {
+  width: 100%;
+  height: 200px;
+  background-color: #bb6d50;
+}
+.final {
+  height: 100px;
+
+}
+.patron--one, .patron--two, .patron--three, .patron--four {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+}
+.patron--one{
+  background: linear-gradient(-135deg, #68a167 50%, transparent 50%) ;
+  top: 0;
+  left: 0;
+}
+.patron--two{
+  background: linear-gradient(135deg, #68a167 50%, transparent 50%);
+  top: 0;
+  right: 0;
+}
+.patron--three{
+  background: linear-gradient(-135deg, transparent 50%, #bb6d50 50%);
+  bottom: 0;
+  left: 0;
+}
+.patron--four{
+  background: linear-gradient(135deg, transparent 50%, #bb6d50 50%);
+  bottom: 0;
+  right: 0;
+}
+/* dibujando las nubes*/
+.nube--one{
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  border-radius:40px;
+  background-color: white;
+  bottom: 0;
+  left: 0px;
+}
+.nube--two{
+  position: absolute;
+  width: 70%;
+  height: 100%;
+  border-radius:40px;
+  background-color: white;
+  bottom: 0;
+}
+
+.layer-9 .nube--two{
+  left: 0;
+}.layer-10 .nube--two{
+  right: 0;
+}
+.pasto--one {
+  position: absolute;
+  width: 35%;
+  height: 75%;
+  left: 0;
+  bottom: 0;
+  border-radius: 30px;
+  background-color: green;
+}
+.pasto--two {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  bottom: 0;
+  border-radius: 35px;
+  background-color: green;
+}
+.pasto--three {
+  position: absolute;
+  width: 35%;
+  height: 75%;
+  right: 0;
+  bottom: 0;
+  border-radius: 30px;
+  background-color: green;
+}
+.pasto--relleno {
+  position: absolute;
+  width: 100%;
+  height: 20%;
+  bottom: 0;
+  background-color: green;
+}
